@@ -28,10 +28,18 @@ function addMenuItem(pizzaRestaurant, item) {
 
 
 function removeMenuItem(pizzaRestaurant, item, type) {
-  pizzaRestaurant.menus.breakfast.splice(0 , 1);
-  return "No one is eating our Bacon and Eggs Pizza - it has been removed from the breakfast menu!"
-}
+console.log(pizzaRestaurant, item, type);
+  console.log("a" , pizzaRestaurant.menus[type]);
 
+if (pizzaRestaurant.menus[type][0] === undefined) {
+  return `Sorry, we don't sell ${item}, try adding a new recipe!`
+} else {
+  pizzaRestaurant.menus[type].splice(0 , 1);
+
+  console.log("a" , pizzaRestaurant.menus[type]);
+  return `No one is eating our ${item} - it has been removed from the ${type} menu!`
+  }
+}
 
 
 //I attempted to make the removeMenuItem function dynamic the
